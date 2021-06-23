@@ -1,0 +1,348 @@
+* { 
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    overflow: hidden;
+    
+}
+
+nav {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 8vh;
+    gap: 400px;
+    width: 80%;
+    position: absolute;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    transition: transform linear 0.1s;
+    z-index: 5;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #D4E8FB;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+nav input {
+    all: unset;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 0.7; 
+}
+
+nav button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+nav i {
+    padding: 10px;
+    padding-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+nav form {
+    background-color: #4DA1EF;
+    width: 200px;
+    height: 44px;
+    border-radius: 5px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.about-dropdown, 
+.services-dropdown,
+.news-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.about-dropdown-content, 
+.services-dropdown-content,
+.news-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.about-dropdown-content a:hover,
+.services-dropdown-content a:hover,
+.news-dropdown-content a:hover {
+    color: black
+}
+
+.about-dropdown:hover .about-dropdown-content {display: block;}
+.services-dropdown:hover .services-dropdown-content {display: block;}
+.news-dropdown:hover .news-dropdown-content {display: block;}
+
+.about-dropdown-content a,
+.services-dropdown-content a,
+.news-dropdown-content a {
+    color: darkgrey;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+}
+
+.header-container {
+    height: 80vh;
+    background-image: url("./assets/iphone-background.png");
+    background-color: #cccccc; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0 20% 0 20%;
+}
+
+.header-container-child {
+    height: 50vh;
+    background-color: #0099FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    padding: 40px;
+    background-color: #2D2E2E;
+    border-radius: 10px;
+    color: white;
+    line-height: 45px;
+}
+
+.left-header-container {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20%;
+    padding-top: 50px;
+}
+
+.right-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+    padding-top: 80px;
+}
+
+.left-header-container h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.card {
+    width: 400px;
+}
+
+@media screen and (max-width:1600px) {
+    .nav-links {
+        width: 80%;
+        padding-left: 250px;
+    }
+
+    nav {
+        gap: 50px;
+    }
+
+    .header-container {
+        font-size: 30px;
+    }
+ }
+
+ @media screen and (max-width:1300px) {
+    .nav-links {
+        width: 80%;
+        padding-left: 70px;
+    }
+
+    nav {
+        gap: 50px;
+    }
+ }
+
+ @media screen and (max-width:1000px) {
+    .nav-links {
+        width: 80%;
+        padding-left: 70px;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 50px;
+    }
+
+    .left-header-container {
+        padding-left: 10%;
+        
+    }
+ }
+
+ @media screen and (max-width:900px) {
+    nav {
+        background-color: white;
+        width: 100%;
+        padding: 0;
+        position: static;
+    }
+
+    .nav-links {
+        transform: translateX(-200%);
+        position: absolute;
+        left: 0px;
+        height: 100vh;
+        top: 0vh;
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+
+    .nav-active {
+        transform: translateX(-1%);
+    }
+
+    .about-dropdown-content, 
+    .services-dropdown-content,
+    .news-dropdown-content {
+        display: block;
+        position: relative;
+        background-color: #222222;
+        min-width: 100px;
+        padding: 0px;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    .about-dropdown-content a,
+    .services-dropdown-content a,
+    .news-dropdown-content a {
+        color: darkgrey;
+        padding: 0 0 0 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .about-dropdown-content a:hover,
+    .services-dropdown-content a:hover,
+    .news-dropdown-content a:hover {
+        color: white;
+    }
+
+
+    nav form {
+        background-color: #464646;
+        max-width: 140px;
+        width: auto;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 40px 0 40px 20px;
+        cursor: pointer;
+    }
+
+    .logo {
+        content:url("./assets/logo-dark.png");
+    }
+
+    .header-container {
+        font-size: 20px;
+        padding: 0 10% 0 10%;
+    }
+
+    .header-container-child {
+        flex-direction: column;
+        min-height: 50vh;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    .right-header-container {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .left-header-container {
+        padding: 20px;
+    }
+    
+ }
+
+/*
+    overflow-x: hidden;
+    position: relative;
+*/
